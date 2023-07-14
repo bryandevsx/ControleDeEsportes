@@ -1,0 +1,34 @@
+﻿@model EspacoModel 
+@{
+    ViewData["Title"] = "Criar espaços";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Cadastrar espaços</h1>
+
+ 
+</div>
+
+<form asp-controller="Espaco" asp-action="Criar" method="post">
+    <div class="form-group">
+        <label for="empresa">Empresa:</label>
+        <input type="text" asp-for="Empresa" class="form-control" placeholder="Digite qual o nome da sua empressa">
+        @Html.ValidationMessageFor(x => x.Empresa)
+    </div>
+
+    <div class="form-group">
+        <label for="endereco">Endereço:</label>
+        <input type="text" asp-for="Endereco" class="form-control" placeholder="Digite qual o endereço do seu espaço">
+        @Html.ValidationMessageFor(x => x.Endereco)
+    </div>
+
+    <div class="form-group">
+        <label for="telefone">Telefone:</label>
+        <input type="text" asp-for="Telefone" class="form-control" placeholder="Digite qual o telefone para contato">
+        @Html.ValidationMessageFor(x => x.Telefone)
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Cadastre</button>
+    <a class="btn btn-secondary" asp-controller="Espaco" asp-action="Index" role="button">Voltar</a>
+    
+</form>
